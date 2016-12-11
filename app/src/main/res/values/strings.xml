@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InDecision</string>
+    <string name="new_list">New List</string>
+    <string name="manage_lists">Manage Lists</string>
+</resources>
