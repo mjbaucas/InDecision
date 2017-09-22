@@ -1,2 +1,2 @@
 # InDecision
-Random selector for user created lists
+List randomizer for Android
