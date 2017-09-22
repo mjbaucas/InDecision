@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 20; i++){
             ListInfo li = new ListInfo();
             li.title = "Random List " + (i+1);
+            ArrayList <String> listItems = new ArrayList<>();
+            listItems.add("one");
+            listItems.add("two");
+            listItems.add("three");
+            li.items = listItems;
             result.add(li);
         }
 

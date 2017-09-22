@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mjbau on 2017-09-15.
@@ -30,7 +31,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public void onBindViewHolder(ListViewHolder listViewHolder, int i) {
         ListInfo info = infoList.get(i);
         listViewHolder.title.setText(info.title);
-        listViewHolder.page_title = info.title;
+        listViewHolder.listTitle = info.title;
+        listViewHolder.listItems = info.items;
     }
 
     @Override
@@ -41,7 +43,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
 
     public static class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         protected TextView title;
-        protected String page_title;
+        protected String listTitle;
+        protected ArrayList<String> listItems;
 
         public ListViewHolder(View itemView) {
             super(itemView);
@@ -52,9 +55,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         @Override
         public void onClick(View view){
             Intent openList = new Intent(view.getContext(), ListInfoActivity.class);
-            openList.putExtra("LIST_TITLE", page_title);
+            openList.putExtra("LIST_TITLE", listTitle);
+            openList.putStringArrayListExtra("LIST_ITEMS", listItems);
             view.getContext().startActivity(openList);
         }
+
     }
 
 }
