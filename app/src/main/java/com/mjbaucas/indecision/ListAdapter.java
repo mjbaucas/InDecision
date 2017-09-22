@@ -1,6 +1,7 @@
 package com.mjbaucas.indecision;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     public void onBindViewHolder(ListViewHolder listViewHolder, int i) {
         ListInfo info = infoList.get(i);
         listViewHolder.title.setText(info.title);
+        listViewHolder.title.setTextColor((i%2 == 0) ? Color.WHITE : Color.BLACK);
+        listViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.BLUE : Color.CYAN);
         listViewHolder.listTitle = info.title;
         listViewHolder.listItems = info.items;
     }

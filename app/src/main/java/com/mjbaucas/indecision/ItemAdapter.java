@@ -4,6 +4,7 @@ package com.mjbaucas.indecision;
  * Created by mjbau on 2017-09-21.
  */
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,11 +33,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public void onBindViewHolder(ItemViewHolder itemViewHolder, int i) {
         String info = itemList.get(i);
         itemViewHolder.item.setText(info);
+        itemViewHolder.item.setTextColor((i%2 == 0) ? Color.WHITE : Color.BLACK);
+        itemViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.BLUE : Color.CYAN);
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_card, viewGroup, false);
+
         return new ItemViewHolder(itemView);
     }
 
