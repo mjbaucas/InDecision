@@ -29,12 +29,6 @@
             android:layout_height="60dp"
             android:text="@string/new_list" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/new_list"
-            android:text="@string/manage_lists" />
-
     </RelativeLayout>
 
 </LinearLayout>
