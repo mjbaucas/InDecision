@@ -31,6 +31,13 @@
             android:id="@+id/item_list"
             />
 
+        <Button
+            android:text="Roll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/item_list"
+            android:id="@+id/roll" />
+
     </LinearLayout>
 
 </RelativeLayout>

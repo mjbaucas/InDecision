@@ -54,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
             listItems.add("one");
             listItems.add("two");
             listItems.add("three");
+            listItems.add("four");
+            listItems.add("five");
+            listItems.add("six");
+            listItems.add("seven");
+            listItems.add("eight");
+            listItems.add("nine");
             li.items = listItems;
             result.add(li);
         }
