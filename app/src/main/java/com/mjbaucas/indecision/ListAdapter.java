@@ -33,7 +33,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         ListInfo info = infoList.get(i);
         listViewHolder.title.setText(info.title);
         listViewHolder.title.setTextColor((i%2 == 0) ? Color.WHITE : Color.BLACK);
-        listViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.BLUE : Color.CYAN);
+        listViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.parseColor("#003B46") : Color.parseColor("#66A5AD"));
         listViewHolder.listTitle = info.title;
         listViewHolder.listItems = info.items;
     }

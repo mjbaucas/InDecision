@@ -34,7 +34,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         String info = itemList.get(i);
         itemViewHolder.item.setText(info);
         itemViewHolder.item.setTextColor((i%2 == 0) ? Color.WHITE : Color.BLACK);
-        itemViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.BLUE : Color.CYAN);
+        itemViewHolder.itemView.setBackgroundColor((i%2 == 0) ? Color.parseColor("#003B46") : Color.parseColor("#66A5AD"));
     }
 
     @Override
