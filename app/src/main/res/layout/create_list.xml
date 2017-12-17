@@ -34,12 +34,21 @@
 
     </android.support.v7.widget.CardView>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="3dp"
+        android:paddingTop="10dp"
+        android:text="@string/entries" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/entry_scroll"
         android:layout_weight="1"
-        android:fillViewport="true">
+        android:layout_margin="3dp"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
 
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -53,9 +62,10 @@
     </ScrollView>
 
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/entry_layout">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_container"
+        android:layout_below="@+id/entry_layout">
 
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"

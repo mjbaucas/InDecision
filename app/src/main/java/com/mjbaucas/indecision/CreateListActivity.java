@@ -1,10 +1,16 @@
 package com.mjbaucas.indecision;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -29,7 +35,7 @@ public class CreateListActivity extends AppCompatActivity {
         addEntry = (Button) findViewById(R.id.add_entry);
         addEntry.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                onCreateLayout.addView(createNewTextView());
+                onCreateLayout.addView(createNewEntryView());
             }
         });
 
@@ -45,17 +51,36 @@ public class CreateListActivity extends AppCompatActivity {
         });
     }
 
-    private TextView createNewTextView() {
-        final LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+    private CardView createNewEntryView() {
+        final CardView.LayoutParams layoutParams = new CardView.LayoutParams(
+            CardView.LayoutParams.MATCH_PARENT,
+            CardView.LayoutParams.WRAP_CONTENT
         );
-        final TextView textView = new TextView(this);
-        textView.setLayoutParams(layoutParams);
-        textView.setText("New text: " + Integer.toString(entryIdList.size()));
+        layoutParams.setMargins(0, dpToPx(4) ,0 ,dpToPx(4) );
+        final CardView cardView = new CardView(this);
+        cardView.setLayoutParams(layoutParams);
+        cardView.setRadius(dpToPx(2));
+
         int entryId = View.generateViewId();
         entryIdList.add(entryId);
-        textView.setId(entryId);
-        return textView;
+        cardView.setId(entryId);
+
+        final ViewGroup.LayoutParams editParams = new ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        );
+        final EditText editText = new EditText(this);
+        editText.setPadding(dpToPx(16), dpToPx(10), dpToPx(16),dpToPx(10));
+        editText.setLayoutParams(editParams);
+
+        cardView.addView(editText);
+        return cardView;
+    }
+
+    public int dpToPx(int dp) {
+        Resources r = getResources();
+        int px = Math.round(TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dp,r.getDisplayMetrics()));
+        return px;
     }
 }
