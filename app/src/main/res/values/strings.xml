@@ -2,4 +2,8 @@
     <string name="app_name">InDecision</string>
     <string name="new_list">New List</string>
     <string name="manage_lists">Manage Lists</string>
+    <string name="add_entry">Add Entry</string>
+    <string name="remove_entry">Remove Entry</string>
+    <string name="add_list">Create List</string>
+    <string name="list_name">List Name</string>
 </resources>

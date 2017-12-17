@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         AppDatabase db = AppDatabase.getAppDatabase(this);
-        populateWithTestData(db);
+//        populateWithTestData(db);
         ButterKnife.bind(this);
         init(db);
     }
@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 listItems.add(listEntries.get(j).getEntryValue());
             }
             li.items = listItems;
-
             result.add(li);
         }
 

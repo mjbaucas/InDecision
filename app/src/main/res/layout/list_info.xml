@@ -35,7 +35,9 @@
         <Button
             android:text="Roll"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_below="@+id/item_list"
             android:backgroundTint="@color/darkBackground"
             android:textColor="@color/white"
